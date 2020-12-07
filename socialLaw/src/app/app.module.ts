@@ -18,6 +18,7 @@ import { LogarComponent } from './logar/logar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,8 +35,7 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    HttpClientModule,
-    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
