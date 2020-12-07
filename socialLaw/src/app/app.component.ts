@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as AOS from 'aos';
 
 
 @Component({
@@ -11,6 +12,7 @@ export class AppComponent {
 
   ngOnInit() {
     
+    AOS.init();
      
     
   }
