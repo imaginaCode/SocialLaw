@@ -129,5 +129,8 @@
       }
     }
   },
-  "defaultProject": "socialLaw"
+  "defaultProject": "socialLaw",
+  "cli": {
+    "analytics": "77cd9578-714a-418d-9f21-fa85e334dc51"
+  }
 }

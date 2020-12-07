@@ -1,12 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { faFortAwesome } from '@fortawesome/free-brands-svg-icons';
-import{ faFacebook} from '@fortawesome/free-brands-svg-icons'
-import{ faLinkedin} from '@fortawesome/free-brands-svg-icons'
-import{ faInstagram} from '@fortawesome/free-brands-svg-icons'
-import{ faBlackTie} from '@fortawesome/free-brands-svg-icons'
-import{ faWhatsapp} from '@fortawesome/free-brands-svg-icons'
+import { faBlackTie, faFacebook, faInstagram, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faBalanceScale } from '@fortawesome/free-solid-svg-icons';
-
 
 @Component({
   selector: 'app-footer',
@@ -16,7 +10,7 @@ import { faBalanceScale } from '@fortawesome/free-solid-svg-icons';
 export class FooterComponent implements OnInit {
 
   faFacebook = faFacebook
-  faLinkedin= faLinkedin
+  faLinkedin = faLinkedin
   faInstagram = faInstagram
   faBlackTie = faBlackTie
   faBalanceScale = faBalanceScale

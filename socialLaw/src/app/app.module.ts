@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavbarLateralComponent } from './navbar-lateral/navbar-lateral.component';
 import { NavbarSuperiorComponent } from './navbar-superior/navbar-superior.component';
 import { FooterComponent } from './footer/footer.component';
@@ -10,8 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { FeedComponent } from './feed/feed.component';
 import { PesquisarComponent } from './pesquisar/pesquisar.component';
 import { LoginComponent } from './login/login.component';
-import { CadastrarComponent } from './cadastrar/cadastrar.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CadastroComponent } from './cadastro/cadastro.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FeedComponent,
     PesquisarComponent,
     LoginComponent,
-    CadastrarComponent
+    CadastroComponent
   ],
   imports: [
     BrowserModule,
