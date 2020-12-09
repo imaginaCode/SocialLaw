@@ -18,6 +18,7 @@ import { LogarComponent } from './logar/logar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
