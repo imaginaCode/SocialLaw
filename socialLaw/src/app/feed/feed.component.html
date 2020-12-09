@@ -36,14 +36,14 @@
                     Escolha seu tema </label
                   >
                   <select  name="tema" id='tema' class="form-control" [(ngModel)]='idTema' (change)='findByIdTemas()'>
-                    <option *ngFor='let item of listaTemas' value={{item.Id_tema}}>
+                    <option *ngFor='let item of listaTemas' value={{item.id_tema}}>
                       {{item.descricao}}
                     </option>
                   </select>
                 </div>
               </div>
               <div class="col-md-6 d-flex justify-content-end">
-                <button type="button" class="btn btn-outline-danger w-25" (click)="publicar()">
+                <button type="button" class="btn btn-outline-danger w-25" (click)='publicar()'>
                   Publicar
                 </button>
               </div>
