@@ -11,7 +11,7 @@ import { AuthService } from '../service/auth.service';
 export class LogarComponent implements OnInit {
 
   UsuarioLogin: UsuarioLogin = new UsuarioLogin()
-  
+
 
   constructor(
     private authService: AuthService,
@@ -26,8 +26,8 @@ export class LogarComponent implements OnInit {
       this.UsuarioLogin = resp
       localStorage.setItem('token', this.UsuarioLogin.token)
       this.router.navigate(['/feed'])
-        
-      
+
+
     })
   }
 
