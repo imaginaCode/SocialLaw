@@ -8,6 +8,7 @@
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
+    
 }
 
 .container-fluid{
@@ -58,7 +59,7 @@
     background-color: #000052;
     border-color: #A30000;
   }
-  
+
   .btn-vinho:hover {
     color: #fff;
     background-color: #A30000;
@@ -70,7 +71,7 @@
 /*Sobre nós*/
 
 
-  
+
   .about-section {
     padding: 50px;
     text-align: center;
@@ -79,7 +80,7 @@
     margin-top: 100px;
     margin-bottom:100px;
   }
-  
+
   .card{
     -webkit-transition: all 1s ease; /* Safari and Chrome */
     -moz-transition: all 1s ease; /* Firefox */

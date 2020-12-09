@@ -35,7 +35,8 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
