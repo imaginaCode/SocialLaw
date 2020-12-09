@@ -1,14 +1,16 @@
 import { ComentarioModel } from './ComentarioModel'
+import { TemaModel } from './TemaModel'
 
 
 export class PostagemModel {
     public Id_postagem!: number
     public usuario!: string
-    public tema!: string
-    public texto!: string
-    public data!: Date    
+    public tema!: TemaModel
+    public artigo!: string
+    public titulo!: string
+    public data!: Date
     public comentarios!:ComentarioModel[]
-    
+
 
 
 }
