@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import {OrderModule} from 'ngx-order-pipe';
 
 
 
@@ -16,6 +17,7 @@ import { FeedComponent } from './feed/feed.component';
 import { PesquisarComponent } from './pesquisar/pesquisar.component';
 import { LogarComponent } from './logar/logar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
+import { PostTemaComponent } from './post-tema/post-tema.component';
 
 
 
@@ -29,14 +31,16 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
     FeedComponent,
     PesquisarComponent,
     LogarComponent,
-    CadastrarComponent
+    CadastrarComponent,
+    PostTemaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    OrderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
