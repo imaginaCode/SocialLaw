@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from './../service/auth.service';
 
 @Component({
   selector: 'app-navbar-superior',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarSuperiorComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    public auth: AuthService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  sair() {
+    this.router.navigate(['/logar'])
+    localStorage.clear()
   }
 
 }
