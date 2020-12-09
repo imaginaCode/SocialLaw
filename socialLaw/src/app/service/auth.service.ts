@@ -19,27 +19,14 @@ export class AuthService {
   cadastrar(usuarioModel: UsuarioModel) : Observable<UsuarioModel>{
     return this.http.post<UsuarioModel>("http://localhost:8080/usuarios/cadastrar", usuarioModel)
   }
-  
-  btnSair(){
-    let ok = false
-    let token = localStorage.getItem('token')
 
-    if (token != null) {
-      ok = true
-    }
-
-    return ok
+  btnSair() {
+    return localStorage.getItem('token') != null
   }
-
   btnLogin() {
-    let ok = false
-    let token = localStorage.getItem('token')
-
-    if (token == null) {
-      ok = true
-    }
-
-    return ok
+    return localStorage.getItem('token') == null
   }
+
+
 
 }
