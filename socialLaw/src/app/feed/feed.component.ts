@@ -37,7 +37,7 @@ export class FeedComponent implements OnInit {
 
   publicar()
   {
-    this.tema.Id_tema = this.idTema;
+    this.tema.id_tema = this.idTema;
     this.postagem.tema = this.tema
 
     if(this.postagem.tema == null || this.postagem.titulo  == null || this.postagem.artigo == null )
@@ -46,9 +46,7 @@ export class FeedComponent implements OnInit {
     }
     else
     {
-      this.postagemService.postPostagem(this.postagem).subscribe((resp:PostagemModel)=>
-      {
-        this.postagem = resp;});
+      this.postagemService.postPostagem(this.postagem).subscribe((resp:PostagemModel)=>{this.postagem = resp})
         /* essa linha esvazia os campos para pegar outra postagem*/
         this.postagem = new PostagemModel();
         alert("Postagem realizada!");
