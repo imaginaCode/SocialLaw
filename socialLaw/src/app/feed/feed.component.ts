@@ -53,8 +53,7 @@ export class FeedComponent implements OnInit {
         this.postagem = new PostagemModel();
         alert("Postagem realizada!");
         this.findAllPostagens();
-      })
-
+      });
     }
   }
 

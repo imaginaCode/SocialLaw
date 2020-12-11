@@ -3,7 +3,7 @@ import { TemaModel } from './TemaModel'
 
 
 export class PostagemModel {
-    public Id_postagem!: number
+    public id_postagem!: number
     public usuario!: string
     public tema!: TemaModel
     public artigo!: string
