@@ -16,6 +16,10 @@ import { FeedComponent } from './feed/feed.component';
 import { PesquisarComponent } from './pesquisar/pesquisar.component';
 import { LogarComponent } from './logar/logar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
+import { OrderModule } from 'ngx-order-pipe';
+import { PostTemaComponent } from './post-tema/post-tema.component';
+import { PutTemaComponent } from './put-tema/put-tema.component';
+import { DeleteTemaComponent } from './delete-tema/delete-tema.component';
 
 
 
@@ -29,14 +33,18 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
     FeedComponent,
     PesquisarComponent,
     LogarComponent,
-    CadastrarComponent
+    CadastrarComponent,
+    PostTemaComponent,
+    PutTemaComponent,
+    DeleteTemaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    OrderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,205 +1,199 @@
 <div class="feed" data-aos="fade-down" data-aos-duration="1000" style="background-color: white" >
-<div class="container shadow-lg p-3 mb-5" >
-<div class="row">
-    <div class="col-md-8 mt-5">
-        <!--centro do feed-->
+  <div class="container shadow-lg p-3 mb-5" >
+  <div class="row">
+      <div class="col-md-8 mt-5">
+          <!--centro do feed-->
 
-            <h3 class="text-center mb-4 text-monospace">
-              Postagem
-            </h3>
+              <h3 class="text-center mb-4 text-monospace">
+                Postagem
+              </h3>
 
-            <div class="form-group">
-              <label class="text-monospace" for="titulo" >Titulo:</label>
-              <input
-                type="text"
-                class="form-control"
-                id="titulo"
-                placeholder="Digite aqui seu título"
-                [(ngModel)]='postagem.titulo'
-              />
-            </div>
-            <div class="form-group">
-              <label class="text-monospace" for="texto" >Texto:</label>
-              <textarea
-                class="form-control"
-                id="texto"
-                rows="3"
-                placeholder="Digite aqui seu texto"
-                [(ngModel)]='postagem.artigo'
-              ></textarea>
-            </div>
-
-            <div class="row d-flex align-items-end">
-              <div class="col-md-6">
-                <div class="form-group m-0">
-                  <label class="text-monospace" for="tema">
-                    Escolha seu tema </label
-                  >
-                  <select  name="tema" id='tema' class="form-control" [(ngModel)]='idTema' (change)='findByIdTemas()'>
-                    <option *ngFor='let item of listaTemas' value={{item.id_tema}}>
-                      {{item.descricao}}
-                    </option>
-                  </select>
-                </div>
+              <div class="form-group">
+                <label class="text-monospace" for="titulo" >Titulo:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="titulo"
+                  placeholder="Digite aqui seu título"
+                  [(ngModel)]='postagem.titulo'
+                />
               </div>
-              <div class="col-md-6 d-flex justify-content-end">
-                <button type="button" class="btn btn-outline-danger w-25" (click)='publicar()'>
-                  Publicar
-                </button>
+              <div class="form-group">
+                <label class="text-monospace" for="texto" >Texto:</label>
+                <textarea
+                  class="form-control"
+                  id="texto"
+                  rows="3"
+                  placeholder="Digite aqui seu texto"
+                  [(ngModel)]='postagem.artigo'
+                ></textarea>
               </div>
-            </div>
 
-            <hr class="mt-5 mb-5" />
-
-            <nav class="d-flex justify-content-center">
-              <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                <a
-                  class="nav-item nav-link active text-secondary font-weight-bold"
-                  id="nav-home-tab"
-                  data-toggle="tab"
-                  href="#minhas-postagens"
-                  role="tab"
-                  aria-controls="nav-home"
-                  aria-selected="true"
-                  >Minhas Postagens</a>
-
-                <a
-                  class="nav-item nav-link text-secondary font-weight-bold"
-                  id="nav-profile-tab"
-                  data-toggle="tab"
-                  href="#postagens-temas"
-                  role="tab"
-                  aria-controls="nav-profile"
-                  aria-selected="false"
-                  >Postagens por tema</a>
-              </div>
-            </nav>
-
-            <div class="tab-content" id="nav-tabContent">
-              <div class="tab-pane fade show active"
-                id="minhas-postagens"
-                role="tabpanel"
-                aria-labelledby="nav-postagens-tab"
-              >
-                <div class="row mt-3 mb-3">
-                  <div class="col-md-10 pr-0">
-                    <input
-                      class="form-control w-100"
-                      type="search"
-                      placeholder="Pesquisar postagem"
-                      aria-label="Pesquisar"
-                    />
-                  </div>
-                  <div class="col-md-2 pl-0">
-                    <button class="btn btn-outline-danger w-100" type="button">
-                      Pesquisar
-                    </button>
+              <div class="row d-flex align-items-end">
+                <div class="col-md-6">
+                  <div class="form-group m-0">
+                    <label class="text-monospace" for="tema">
+                      Escolha seu tema  ou <a routerLink='/cadastro-tema' >Cadatre um novo</a></label
+                    >
+                    <select  name="tema" id='tema' class="form-control" [(ngModel)]='idTema' (change)='findByIdTemas()'>
+                      <option *ngFor='let item of listaTemas' value={{item.id_tema}}>
+                        {{item.descricao}}
+                      </option>
+                    </select>
                   </div>
                 </div>
-
-
-
-
-                <div class="row">
-                  <div class="col-md-12">
-
-                    <div class="card mt-5 mb-5 shadow-lg"  *ngFor="let item of listaPostagem ">
-                      <div class="card-header">
-                          <div class="row d-flex align-items-center">
-                              <div class="col-md-8">
-                                  <h5 class="card-title"> {{item.titulo}} </h5>
-                                  <small>Tema: </small>
-                              </div>
-                              <div class="col-md-4 d-flex justify-content-end">
-
-                                  <button class="mr-3 btn btn-vinho" >
-                                      Editar
-                                  </button>
-
-                                  <button class="btn btn-vinho ml-3">
-                                      Apagar
-                                  </button>
-
-                              </div>
-                          </div>
-                      </div>
-
-                      <div class="card-body" >
-                        <p class="card-text" aria-describedby="texto"> {{item.artigo}} </p>
-                        <small id="texto" class="form-text m-0 text-muted mb-3 text-monospace">
-                          Postado em {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}</small>
-                      </div>
-                  </div>
-                  </div>
-                </div>
-
-
-
-
-
-              </div>
-
-            </div>
-
-
-
-
-
-
-
-              <div
-                class="tab-pane fade"
-                id="postagens-temas"
-                role="tabpanel"
-                aria-labelledby="nav-presenca-tab"
-              >
-                <div class="row mt-3 mb-3">
-                  <div class="col-md-10 pr-0">
-                    <input
-                      class="form-control w-100"
-                      type="search"
-                      placeholder="Pesquisar postagem"
-                      aria-label="Pesquisar">
-                  </div>
-                  <div class="col-md-2 pl-0">
-                    <button class="btn btn-outline-danger w-100" type="button">
-                      Pesquisar
-                    </button>
-                  </div>
+                <div class="col-md-6 d-flex justify-content-end">
+                  <button type="button" class="btn btn-outline-danger w-25" (click)='publicar()'>
+                    Publicar
+                  </button>
                 </div>
               </div>
 
+              <hr class="mt-5 mb-5" />
+
+              <nav class="d-flex justify-content-center">
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                  <a
+                    class="nav-item nav-link active text-secondary font-weight-bold"
+                    id="nav-home-tab"
+                    data-toggle="tab"
+                    href="#minhas-postagens"
+                    role="tab"
+                    aria-controls="nav-home"
+                    aria-selected="true"
+                    >Minhas Postagens</a>
+
+                  <a
+                    class="nav-item nav-link text-secondary font-weight-bold"
+                    id="nav-profile-tab"
+                    data-toggle="tab"
+                    href="#postagens-temas"
+                    role="tab"
+                    aria-controls="nav-profile"
+                    aria-selected="false"
+                    >Postagens por tema</a>
+                </div>
+              </nav>
+
+              <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active"
+                  id="minhas-postagens"
+                  role="tabpanel"
+                  aria-labelledby="nav-postagens-tab"
+                >
+                  <div class="row mt-3 mb-3">
+                    <div class="col-md-10 pr-0">
+                      <input
+                        class="form-control w-100"
+                        type="search"
+                        placeholder="Pesquisar postagem"
+                        aria-label="Pesquisar"
+                      />
+                    </div>
+                    <div class="col-md-2 pl-0">
+                      <button class="btn btn-outline-danger w-100" type="button">
+                        Pesquisar
+                      </button>
+                    </div>
+                  </div>
 
 
+
+
+                  <div class="row">
+                    <div class="col-md-12">
+
+                      <div class="card mt-5 mb-5"  *ngFor="let item of listaPostagem">
+                        <div class="card-header">
+                            <div class="row d-flex align-items-center">
+                                <div class="col-md-8">
+                                    <h5 class="card-title"> {{item.titulo}} </h5>
+                                    <small>Tema: </small>
+                                </div>
+                                <div class="col-md-4 d-flex justify-content-end">
+
+                                    <button class="mr-3 btn btn-outline-info" >
+                                        Editar
+                                    </button>
+
+                                    <button class="btn btn-outline-danger ml-3">
+                                        Apagar
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-body" >
+                          <p class="card-text" aria-describedby="texto"> {{item.artigo}} </p>
+                          <small id="texto" class="form-text m-0 text-muted mb-3 text-monospace">
+                            Postado em {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}</small>
+                        </div>
+                    </div>
+                    </div>
+                  </div>
+
+
+
+
+
+                </div>
+
+              </div>
+
+
+
+
+
+
+
+                <div
+                  class="tab-pane fade"
+                  id="postagens-temas"
+                  role="tabpanel"
+                  aria-labelledby="nav-presenca-tab"
+                >
+                  <div class="row mt-3 mb-3">
+                    <div class="col-md-10 pr-0">
+                      <input
+                        class="form-control w-100"
+                        type="search"
+                        placeholder="Pesquisar postagem"
+                        aria-label="Pesquisar">
+                    </div>
+                    <div class="col-md-2 pl-0">
+                      <button class="btn btn-outline-danger w-100" type="button">
+                        Pesquisar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+
+
+              </div>
+
+
+
+
+
+      <div class="col-md-4 justify-content-end mt-5">
+          <!--lateral direita com o perfil -->
+          <div class="card justify-element-center shadow-lg p-3 mb-5 bg-transparent" style="width: 18rem;  ">
+              <img class="card-img-top rounded-circle justify-content-center" style="width:250px; height: 250px; padding: 12px; margin-left:8px; margin-right:12px " src="https://static.vecteezy.com/system/resources/previews/000/654/724/non_2x/vector-woman-face-cartoon.jpg" alt="Imagem de capa do card">
+              <div class="card-body">
+                <h5 class="card-title">Nome do Usuário</h5>
+
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item " style=" color:white; border-color:white; background-color:#000052;">Cras justo odio</li>
+                <li class="list-group-item "style=" color:white; border-color:white; background-color:#000052;">Dapibus ac facilisis in</li>
+                <li class="list-group-item "style=" color:white;border-color:white; background-color:#000052;">Vestibulum at eros</li>
+              </ul>
             </div>
+      </div>
 
-
-
-
-
-    <div class="col-md-4 justify-content-end mt-5">
-        <!--lateral direita com o perfil -->
-        <div class="card justify-element-center shadow-lg p-3 mb-5 bg-transparent" style="width: 18rem;  ">
-            <img class="card-img-top rounded-circle justify-content-center" style="width:250px; height: 250px; padding: 12px; margin-left:8px; margin-right:12px " src="https://static.vecteezy.com/system/resources/previews/000/654/724/non_2x/vector-woman-face-cartoon.jpg" alt="Imagem de capa do card">
-            <div class="card-body">
-              <h5 class="card-title">Nome do Usuário</h5>
-
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item " style=" color:white; border-color:white; background-color:#000052;">Cras justo odio</li>
-              <li class="list-group-item "style=" color:white; border-color:white; background-color:#000052;">Dapibus ac facilisis in</li>
-              <li class="list-group-item "style=" color:white;border-color:white; background-color:#000052;">Vestibulum at eros</li>
-            </ul>
-          </div>
-    </div>
-
-</div>
-</div>
-</div>
-
-
-
-
-
-
+  </div>
+  </div>
+  </div>
 
