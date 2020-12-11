@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import {OrderModule} from 'ngx-order-pipe';
 
 
 
@@ -17,7 +16,10 @@ import { FeedComponent } from './feed/feed.component';
 import { PesquisarComponent } from './pesquisar/pesquisar.component';
 import { LogarComponent } from './logar/logar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
+import { OrderModule } from 'ngx-order-pipe';
 import { PostTemaComponent } from './post-tema/post-tema.component';
+import { PutTemaComponent } from './put-tema/put-tema.component';
+import { DeleteTemaComponent } from './delete-tema/delete-tema.component';
 
 
 
@@ -32,7 +34,9 @@ import { PostTemaComponent } from './post-tema/post-tema.component';
     PesquisarComponent,
     LogarComponent,
     CadastrarComponent,
-    PostTemaComponent
+    PostTemaComponent,
+    PutTemaComponent,
+    DeleteTemaComponent
   ],
   imports: [
     BrowserModule,
