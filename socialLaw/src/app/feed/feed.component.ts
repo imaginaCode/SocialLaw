@@ -46,12 +46,12 @@ export class FeedComponent implements OnInit {
     }
     else
     {
-      this.postagemService.postPostagem(this.postagem).subscribe((resp:PostagemModel)=>{this.postagem = resp})
+      this.postagemService.postPostagem(this.postagem).subscribe((resp:PostagemModel)=>{this.postagem = resp
         /* essa linha esvazia os campos para pegar outra postagem*/
         this.postagem = new PostagemModel();
         alert("Postagem realizada!");
         this.findAllPostagens();
-
+      });
     }
   }
 

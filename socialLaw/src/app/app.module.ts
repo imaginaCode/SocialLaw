@@ -16,6 +16,8 @@ import { FeedComponent } from './feed/feed.component';
 import { PesquisarComponent } from './pesquisar/pesquisar.component';
 import { LogarComponent } from './logar/logar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
+import { PutPostagemComponent } from './put-postagem/put-postagem.component';
+import { DeletePostagemComponent } from './delete-postagem/delete-postagem.component';
 
 
 
@@ -29,7 +31,9 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
     FeedComponent,
     PesquisarComponent,
     LogarComponent,
-    CadastrarComponent
+    CadastrarComponent,
+    PutPostagemComponent,
+    DeletePostagemComponent
   ],
   imports: [
     BrowserModule,
