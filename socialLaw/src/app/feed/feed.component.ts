@@ -85,6 +85,18 @@ export class FeedComponent implements OnInit {
        }
   }
 
+  findByNomeTema()
+  {
+    if(this.titulo === '')
+      {
+        this.findAllTemas();
+      } else
+      {
+        this.temaService.getByNomeTema(this.nomeTema).subscribe((resp:TemaModel[])=>
+        {this.listaTemas = resp})
+      }
+  }
+
 
 
 }
