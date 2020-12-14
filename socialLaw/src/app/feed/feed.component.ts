@@ -22,9 +22,12 @@ export class FeedComponent implements OnInit {
 
   postagem : PostagemModel = new PostagemModel();
   listaPostagem : PostagemModel[];
+  titulo:string;
+
   tema: TemaModel = new TemaModel();
   listaTemas : TemaModel[];
   idTema: number;
+  nomeTema:string;
 
 
   ngOnInit(): void {
@@ -70,6 +73,16 @@ export class FeedComponent implements OnInit {
     this.temaService.getByIdTema(this.idTema).subscribe((resp:TemaModel)=> {
       this.tema = resp
     })
+  }
+
+  findByTituloPostagem()
+  {
+    if(this.titulo === ''){
+      this.findAllPostagens();
+    }
+    else{
+    this.postagemService.getByTituloPostagem(this.titulo).subscribe((resp:PostagemModel[])=>{this.listaPostagem = resp});
+       }
   }
 
 
