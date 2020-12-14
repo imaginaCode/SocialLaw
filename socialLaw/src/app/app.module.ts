@@ -23,6 +23,7 @@ import { PutTemaComponent } from './put-tema/put-tema.component';
 import { DeleteTemaComponent } from './delete-tema/delete-tema.component';
 import { PutPostagemComponent } from './put-postagem/put-postagem.component';
 import { DeletePostagemComponent } from './delete-postagem/delete-postagem.component';
+import { AlertasComponent } from './alertas/alertas.component';
 
 
 
@@ -41,7 +42,8 @@ import { DeletePostagemComponent } from './delete-postagem/delete-postagem.compo
     PutTemaComponent,
     DeleteTemaComponent,
     PutPostagemComponent,
-    DeletePostagemComponent
+    DeletePostagemComponent,
+    AlertasComponent
   ],
   imports: [
     BrowserModule,
