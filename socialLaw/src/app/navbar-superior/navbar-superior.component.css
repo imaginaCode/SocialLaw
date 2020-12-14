@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .espacamento {
     letter-spacing: .2rem;
 }
@@ -70,4 +71,43 @@
     -o-transform:scale(1.15); /* Opera */
      transform:scale(1.15);
 
+=======
+.espacamento {
+    letter-spacing: .2rem;
+}
+
+.ml-15 {
+    margin-left: 600px;
+}
+
+.ml-20 {
+  margin-left: 800px;
+}
+
+.btn-vinho {
+    color: #fff;
+    background-color: #000052;
+    border-color: #A30000;
+  }
+  
+  .btn-vinho:hover {
+    color: #fff;
+    background-color: #A30000;
+    border-color: #A30000;
+  }
+
+  .nav-link{
+    -webkit-transition: all 1s ease; /* Safari and Chrome */
+    -moz-transition: all 1s ease; /* Firefox */
+    -ms-transition: all 1s ease; /* IE 9 */
+    -o-transition: all 1s ease; /* Opera */
+    transition: all 1s ease;
+}
+.nav-link:hover {
+    -webkit-transform:scale(1.15); /* Safari and Chrome */
+    -moz-transform:scale(1.15); /* Firefox */
+    -ms-transform:scale(1.15); /* IE 9 */
+    -o-transform:scale(1.15); /* Opera */
+     transform:scale(1.15);
+>>>>>>> alerts
 }
