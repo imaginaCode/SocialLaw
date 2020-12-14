@@ -1,60 +1,56 @@
-<nav class=" navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: #000052;">
+<nav class=" navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: #14148b;">
 
-    <!--Icone-->
-    <a class="navbar-brand" href="#">
+  <!--Icone-->
+  <a class="navbar-brand" href="#">
 
-        <img src="https://www.flaticon.com/svg/static/icons/svg/2971/2971000.svg" width="30" height="30" alt="">
+      <img src="https://www.flaticon.com/svg/static/icons/svg/2971/2971000.svg" width="30" height="30" alt="">
 
-      </a>
-    <!--/Icone-->
+      
 
-    <a class="navbar-brand text-monospace text-uppercase espacamento p-2" routerLink = '/feed' >Social Law</a>
+    </a>
+  <!--/Icone-->
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <a class="navbar-brand text-monospace text-uppercase espacamento p-2 nav-link" routerLink = '/home' >Social Law</a>
 
-    <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-      <ul class="navbar-nav mr-auto">
+  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
 
-        <li class="nav-item active">
-          <a class="nav-link p-3 ml-5 " routerLink = '/home'>Home <span class="sr-only">(página atual)</span></a>
-        </li>
+    <ul class="navbar-nav mr-auto">
 
-        <li class="nav-item active">
-          <a class="nav-link p-3 ml-5 " routerLink = '/feed'>Feed <span class="sr-only">(página atual)</span></a>
-        </li>
+      <li class="nav-item active">
+        <a class="nav-link p-3 ml-4 " routerLink = '/feed'>Feed <span class="sr-only">(página atual)</span></a>
+      </li>
 
-        <li class="nav-item active">
-          <a class="nav-link p-3 ml-5 " href="#"></a>
-        </li>
+        <!--Botões--> 
 
-          <!--Botões-->
+        
+        <div class="p-2">
 
-          
-          <div class="p-2">
+          <form class="form-inline my-2 my-lg-0">
 
-            <form class="form-inline my-2 my-lg-0">
+            
+            <div *ngIf='auth.btnLogin()'>
+              <img class="ml-850" src="assets/login.png" width="30" height="30" alt="">
+              <button class="btn btn-menu ml-2" routerLink='/logar'>Login</button>
+            </div>
 
-              <div *ngIf='auth.btnLogin()'>
-                <button class="btn btn-vinho ml-15" routerLink='/logar'>Login</button>
-              </div>
+            <div *ngIf='auth.btnLogin()'>
+              <button class="btn btn-menu ml-4 justify-content-end " routerLink='/cadastrar'>Cadastrar</button>
+            </div>
 
-              <div *ngIf='auth.btnLogin()'>
-                <button class="btn btn-vinho botao ml-4 justify-content-end " routerLink='/cadastrar'>Cadastrar</button>
-              </div>
+            <div *ngIf='auth.btnSair()'>
+              <button class="btn btn-sair ml-sair" (click)= 'sair()'>Sair</button>
+            </div>
 
-              <div *ngIf='auth.btnSair()'>
-                <button class="btn btn-vinho ml-20" (click)= 'sair()'>Sair</button>
-              </div>
 
-  
-              </form>
+            </form>
 
-          </div>
-          <!--/Botões-->
+        </div>
+        <!--/Botões-->
 
-      </ul>
-    </div>
-  </nav>
+    </ul>
+  </div>
+</nav>
