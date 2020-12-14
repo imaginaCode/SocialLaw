@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import {ModalModule} from 'ngx-bootstrap/modal';
 
 
 
@@ -48,7 +49,9 @@ import { DeletePostagemComponent } from './delete-postagem/delete-postagem.compo
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
-    OrderModule
+    OrderModule,
+    ModalModule.forRoot()
+
   ],
   providers: [],
   bootstrap: [AppComponent]
