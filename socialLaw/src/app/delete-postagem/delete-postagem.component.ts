@@ -21,6 +21,7 @@ export class DeletePostagemComponent implements OnInit {
   ) { }
 
   ngOnInit(){
+    window.scroll(0,0)
     let id: number = this.route.snapshot.params['id'];
     this.findByIdPostagem(id);
   }

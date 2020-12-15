@@ -37,7 +37,7 @@ export class PutTemaComponent implements OnInit {
     if (this.tema.postagem.length != 0) {
       this.alert.showAlertDanger('Esse tema não pode ser modificado, pois já pertence a uma postagem.')
       this.router.navigate(['/cadastro-tema'])
-    } else if (this.tema.descricao == null || this.tema.descricao == ''){
+    } else if (this.tema.nome == null || this.tema.nome == ''){
       this.alert.showAlertDanger('A descrição não pode ficar vazia!')
     } else {
       this.temaService.putTema(this.tema).subscribe((resp: TemaModel) => {

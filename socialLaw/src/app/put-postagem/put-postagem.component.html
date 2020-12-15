@@ -5,23 +5,23 @@
                 <h3 class="text-center mb-4 roboto mt-5">
                     Edição Postagem
                 </h3>
-    
+
                 <!-- TITULO DA POSTAGEM -->
                 <div class="form-group">
                     <label class="roboto-mono" for="titulo">Titulo:</label>
                     <input type="text" class="form-control" id="titulo" placeholder="Digite aqui seu título"
                         [(ngModel)]='postagem.titulo' />
                 </div>
-    
-    
+
+
                 <!-- TEXTO DA POSTAGEM -->
                 <div class="form-group">
                     <label class="roboto-mono" for="texto">Texto:</label>
                     <textarea class="form-control" id="texto" rows="3" placeholder="Digite aqui seu texto"
                         [(ngModel)]='postagem.artigo'></textarea>
                 </div>
-    
-    
+
+
                 <!-- TEMA DA POSTAGEM -->
                 <div class="row d-flex align-items-end">
                     <div class="col-md-6">
@@ -30,7 +30,7 @@
                                 Escolha seu tema </label>
                             <select name="tema" id='tema' class="form-control" [(ngModel)]='idTema' (change)='findByIdTemas()'>
                                 <option *ngFor='let item of listaTemas' value={{item.id_tema}}>
-                                    {{item.descricao}}
+                                    {{item.nome}}
                                 </option>
                             </select>
                         </div>
