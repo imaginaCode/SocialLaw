@@ -4,12 +4,12 @@
     <div class="col-md-8 mt-5">
         <!--centro do feed-->
 
-            <h3 class="text-center mb-4 text-monospace">
-              Postagem
+            <h3 class="text-center mb-4 postagem">
+              <span class="medi-sharp">P</span>ostagem
             </h3>
 
             <div class="form-group">
-              <label class="text-monospace" for="titulo" >Titulo:</label>
+              <label class="roboto-mono" for="titulo" >Titulo:</label>
               <input
                 type="text"
                 class="form-control"
@@ -19,7 +19,7 @@
               />
             </div>
             <div class="form-group">
-              <label class="text-monospace" for="texto" >Texto:</label>
+              <label class="roboto-mono" for="texto" >Texto:</label>
               <textarea
                 class="form-control"
                 id="texto"
@@ -32,7 +32,7 @@
             <div class="row d-flex align-items-end">
               <div class="col-md-6">
                 <div class="form-group m-0">
-                  <label class="text-monospace" for="tema">
+                  <label class="roboto-mono" for="tema">
                     Escolha seu tema  ou <a routerLink='/cadastro-tema' >Cadatre um novo</a></label
                   >
                   <select  name="tema" id='tema' class="form-control" [(ngModel)]='idTema' (change)='findByIdTemas()'>
@@ -54,7 +54,7 @@
             <nav class="d-flex justify-content-center">
               <div class="nav nav-tabs" id="nav-tab" role="tablist">
                 <a
-                  class="nav-item nav-link active text-secondary font-weight-bold"
+                  class="nav-item nav-link active text-secondary font-weight-bold roboto"
                   id="nav-home-tab"
                   data-toggle="tab"
                   href="#minhas-postagens"
@@ -64,7 +64,7 @@
                   >Minhas Postagens</a>
 
                 <a
-                  class="nav-item nav-link text-secondary font-weight-bold"
+                  class="nav-item nav-link text-secondary font-weight-bold roboto"
                   id="nav-profile-tab"
                   data-toggle="tab"
                   href="#postagens-temas"

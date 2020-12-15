@@ -1,4 +1,4 @@
-<div class="container pt-6">
+<div class="container pt-6 roboto">
   <div class="row mt-5 mb-5">
     <div class="col-md-12">
       <h1 class="text-center">Cadastrar</h1>
@@ -8,22 +8,22 @@
     <div class="col-md-8">
       <div>
         <div class="form-group">
-          <label for="nome">Nome</label>
+          <label class="roboto-mono" for="nome">Nome</label>
           <input type="text" class="form-control" id="nome" placeholder="Digite o seu nome aqui" [(ngModel)]='usuarioModel.nome'>
         </div>
 
         <div class="form-group">
-          <label for="email">E-mail</label>
+          <label class="roboto-mono" for="email">E-mail</label>
           <input type="email" class="form-control" id="email" placeholder="nome@gmail.com" [(ngModel)]='usuarioModel.usuario'>
         </div>
 
         <div class="form-group">
-          <label for="senha">Senha</label>
+          <label class="roboto-mono" for="senha">Senha</label>
           <input type="password" class="form-control" id="senha" placeholder="Digite sua senha" (input)='conferirSenha($event)' value='{{senha}}'>
         </div>
 
         <div class="form-group">
-          <label for="senhaConf">Confirmar Senha</label>
+          <label class="roboto-mono" for="senhaConf">Confirmar Senha</label>
           <input type="password" class="form-control" id="senhaConf" placeholder="Digite a confirmação de senha" [(ngModel)]='usuarioModel.senha'>
         </div>
 
@@ -33,5 +33,4 @@
       </div>
     </div>
   </div>
-
 </div>
