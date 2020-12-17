@@ -1,17 +1,21 @@
+import { UsuarioLogin } from './../model/UsuarioLogin';
+import { UsuarioModel } from './../model/UsuarioModel';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { UsuarioLogin } from '../model/UsuarioLogin';
-import { UsuarioModel } from '../model/UsuarioModel';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
+
   constructor( private http: HttpClient) { }
 
   logar (usuarioLogin: UsuarioLogin):  Observable<UsuarioLogin> {
+
+
     return this.http.post<UsuarioLogin>("http://localhost:8080/usuarios/logar", usuarioLogin)
 
   }
@@ -26,6 +30,7 @@ export class AuthService {
   btnLogin() {
     return localStorage.getItem('token') == null
   }
+
 
 
 

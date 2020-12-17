@@ -1,6 +1,7 @@
+import { UsuarioLogin } from './../model/UsuarioLogin';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UsuarioLogin } from '../model/UsuarioLogin';
+
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -26,6 +27,10 @@ export class LogarComponent implements OnInit {
       this.UsuarioLogin = resp
       localStorage.setItem('token', this.UsuarioLogin.token)
       this.router.navigate(['/feed'])
+      /*this.router.navigateByUrl('/feed', {
+        state: {UsuarioLogin}
+      })*/
+
 
 
     })

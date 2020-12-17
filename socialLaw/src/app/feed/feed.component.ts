@@ -1,5 +1,9 @@
+import { ComentarioModel } from './../model/ComentarioModel';
+import { ComentarioService } from './../service/comentario.service';
+import { UsuarioLogin } from './../model/UsuarioLogin';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PostagemModel } from '../model/PostagemModel';
 import { TemaModel } from '../model/TemaModel';
 import { AlertasService } from '../service/alertas.service';
@@ -15,7 +19,14 @@ export class FeedComponent implements OnInit {
 
   constructor(private postagemService: PostagemService,
               private temaService: TemaService,
-              private alert : AlertasService) { }
+              private comentarioService: ComentarioService,
+              private alert : AlertasService,
+              private router: Router) {
+
+                /*const nav = this.router.getCurrentNavigation();
+                console.log(nav?.extras.state);*/
+
+               }
 
   key = 'data'
   reverse = true
@@ -29,11 +40,19 @@ export class FeedComponent implements OnInit {
   idTema: number;
   nomeTema:string;
 
+  usuarioLogin: UsuarioLogin
+
+  listaComentario:ComentarioModel[];
+  comentario : ComentarioModel = new ComentarioModel();
+
 
   ngOnInit(): void {
     window.scroll(0,0);
     this.findAllPostagens()
     this.findAllTemas()
+    this.findAllComentarios()
+
+
   }
 
 
@@ -97,6 +116,30 @@ export class FeedComponent implements OnInit {
       }
   }
 
+  findAllComentarios()
+  {
+      this.comentarioService.getAllComentario().subscribe((resp:ComentarioModel[])=>{this.listaComentario = resp})
+  }
 
+  publicarComentario(id: number)
+  {
+      this.postagemService.getByIdPostagem(id).subscribe((resp:PostagemModel)=>{this.postagem = resp})
+      this.comentario.postagem = this.postagem
+
+
+    if(this.comentario.artigo == null || this.comentario.postagem == null )
+    {
+      this.alert.showAlertDanger("Preencha os campos corretamente!")
+    }
+    else
+    {
+      this.comentarioService.postComentario(this.comentario).subscribe((resp:ComentarioModel)=>{this.comentario = resp
+        /* essa linha esvazia os campos para pegar outra postagem*/
+        this.comentario = new ComentarioModel();
+        this.alert.showAlertSuccess("Comentario realizado!");
+        this.findAllComentarios();
+      });
+    }
+  }
 
 }

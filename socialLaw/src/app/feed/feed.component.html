@@ -37,7 +37,7 @@
                   >
                   <select  name="tema" id='tema' class="form-control" [(ngModel)]='idTema' (change)='findByIdTemas()'>
                     <option *ngFor='let item of listaTemas' value={{item.id_tema}}>
-                      {{item.descricao}}
+                      {{item.nome}}
                     </option>
                   </select>
                 </div>
@@ -102,12 +102,14 @@
                 <div class="row">
                   <div class="col-md-12">
 
-                    <div class="card mt-5 mb-5"  *ngFor="let item of listaPostagem | orderBy : key : reverse">
+                    <div class="card mt-5 mb-5"  *ngFor="let item of listaPostagem | orderBy : key : reverse" >
+
                       <div class="card-header">
                           <div class="row d-flex align-items-center">
                               <div class="col-md-8">
                                   <h5 class="card-title"> {{item.titulo}} </h5>
-                                  <small>Tema: {{item.tema.descricao}} </small>
+                                  <small>Tema: {{item.tema.nome}} </small>
+
                               </div>
                               <div class="col-md-4 d-flex justify-content-end">
 
@@ -120,7 +122,6 @@
                                     [routerLink]="['/delete-post', item.id_postagem]">
                                       Apagar
                                   </button>
-
                               </div>
                           </div>
                       </div>
@@ -129,7 +130,38 @@
                         <p class="card-text" aria-describedby="texto"> {{item.artigo}} </p>
                         <small id="texto" class="form-text m-0 text-muted mb-3 text-monospace">
                           Postado em {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}</small>
-                      </div>
+
+                          <div class="form-group">
+                            <label class="text-monospace" for="titulo" >Comentário:</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="comentario"
+                              placeholder="Digite aqui seu título"
+                              [(ngModel)]='comentario.artigo'
+                            />
+
+                              <button type="button" class="btn btn-outline-danger w-25 mt-2" (click)='publicarComentario(item.id_postagem)'>
+                                Publicar
+                              </button>
+                              <button type="button" class="btn btn-outline-danger w-25 mt-2" data-toggle="collapse" data-target="#collapseExample"> Mostrar Comentários </button>
+                              <div *ngFor='let coment of item.comentarios' class="collapse" id="collapseExample">
+                                <div class="col-md-12">
+                                  <div class="card mt-5">
+                                    <div class="card-body">
+
+                                      <small>{{coment.artigo}} </small>
+                                      <small id="texto" class="form-text m-0 text-muted mt-2 text-monospace">
+                                        Postado em {{coment.data | date: 'dd/MM/yyyy'}} às {{coment.data | date:'HH:mm'}}</small>
+                                    </div>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+
                   </div>
                   </div>
                 </div>
@@ -175,7 +207,7 @@
                           <div class="row d-flex align-items-center">
                               <div class="col-md-8">
                                   <h5 class="card-title"> {{post.titulo}} </h5>
-                                  <small>Tema: {{post.tema.descricao}} </small>
+                                  <small>Tema: {{post.tema.nome}} </small>
                               </div>
                           </div>
                       </div>
