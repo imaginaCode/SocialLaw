@@ -52,6 +52,23 @@
     border-color: #A30000;
   }
 
+  .btn-linkedin:hover{
+      background-color: #0e76a8;
+
+  }
+
+  .btn-git:hover{
+      background-color: #8730b9;
+  }
+
+  .btn-redesocial{
+    display:block;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    
+  }
+
 
 
 /*Sobre nós*/
