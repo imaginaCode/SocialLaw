@@ -15,23 +15,23 @@ export class ComentarioService {
 
 
   getAllComentario(): Observable<ComentarioModel[]> {
-    return this.http.get<ComentarioModel[]>('http://localhost:8080/comentario', this.token)
+    return this.http.get<ComentarioModel[]>('https://social-law.herokuapp.com/comentario', this.token)
   }
 
   getByIdComentario(id: number): Observable<ComentarioModel>{
-    return this.http.get<ComentarioModel>(`http://localhost:8080/comentario/${id}`, this.token);
+    return this.http.get<ComentarioModel>(`https://social-law.herokuapp.com/comentario/${id}`, this.token);
   }
 
   postComentario(comentario: ComentarioModel): Observable<ComentarioModel> {
-    return this.http.post<ComentarioModel>('http://localhost:8080/comentario', comentario, this.token)
+    return this.http.post<ComentarioModel>('https://social-law.herokuapp.com/comentario', comentario, this.token)
   }
 
   putComentario(comentario: ComentarioModel): Observable<ComentarioModel>{
-    return this.http.put<ComentarioModel>('http://localhost:8080/comentario', comentario, this.token);
+    return this.http.put<ComentarioModel>('https://social-law.herokuapp.com/comentario', comentario, this.token);
   }
 
   deleteComentario(id: number): Observable<ComentarioModel>{
-    return this.http.delete<ComentarioModel>(`http://localhost:8080/comentario/${id}`, this.token);
+    return this.http.delete<ComentarioModel>(`https://social-law.herokuapp.com/comentario/${id}`, this.token);
   }
 
 

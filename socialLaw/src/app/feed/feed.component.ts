@@ -1,7 +1,7 @@
 import { ComentarioModel } from './../model/ComentarioModel';
 import { ComentarioService } from './../service/comentario.service';
 import { UsuarioLogin } from './../model/UsuarioLogin';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PostagemModel } from '../model/PostagemModel';
@@ -28,6 +28,7 @@ export class FeedComponent implements OnInit {
 
                }
 
+
   key = 'data'
   reverse = true
 
@@ -44,9 +45,21 @@ export class FeedComponent implements OnInit {
 
   listaComentario:ComentarioModel[];
   comentario : ComentarioModel = new ComentarioModel();
+  token:string;
 
 
   ngOnInit(): void {
+
+
+
+    let token = localStorage.getItem('token')
+    if(token == null)
+    {
+      this.router.navigate(['/logar'])
+      this.alert.showAlertInfo("Faça o login para acessar o feed")
+    }
+
+
     window.scroll(0,0);
     this.findAllPostagens()
     this.findAllTemas()

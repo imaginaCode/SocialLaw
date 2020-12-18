@@ -12,12 +12,12 @@ export class AuthService {
   constructor( private http: HttpClient) { }
 
   logar (usuarioLogin: UsuarioLogin):  Observable<UsuarioLogin> {
-    return this.http.post<UsuarioLogin>("http://localhost:8080/usuarios/logar", usuarioLogin)
+    return this.http.post<UsuarioLogin>("https://social-law.herokuapp.com/usuarios/logar", usuarioLogin)
 
   }
 
   cadastrar(usuarioModel: UsuarioModel) : Observable<UsuarioModel>{
-    return this.http.post<UsuarioModel>("http://localhost:8080/usuarios/cadastrar", usuarioModel)
+    return this.http.post<UsuarioModel>("https://social-law.herokuapp.com/usuarios/cadastrar", usuarioModel)
   }
 
   btnSair() {
