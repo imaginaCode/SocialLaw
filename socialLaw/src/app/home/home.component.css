@@ -41,15 +41,35 @@
 }
 
 .btn-vinho {
-  color: #fff;
-  background-color: #000052;
-}
+    color: #fff;
+    background-color: #000052;
+  }
+  
+  .btn-vinho:hover {
+    color: #fff;
+    background-color: #A30000;
+    border-color: #A30000;
+  }
 
-.btn-vinho:hover {
-  color: #fff;
-  background-color: #a30000;
-  border-color: #a30000;
-}
+  .btn-linkedin:hover{
+      background-color: #0e76a8;
+
+  }
+
+  .btn-git:hover{
+      background-color: #8730b9;
+  }
+
+  .btn-redesocial{
+    display:block;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    
+  }
+
+
+
 
 /*Sobre nós*/
 
