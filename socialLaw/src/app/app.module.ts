@@ -24,6 +24,8 @@ import { DeleteTemaComponent } from './delete-tema/delete-tema.component';
 import { PutPostagemComponent } from './put-postagem/put-postagem.component';
 import { DeletePostagemComponent } from './delete-postagem/delete-postagem.component';
 import { AlertasComponent } from './alertas/alertas.component';
+import { ListaPostagemComponent } from './lista-postagem/lista-postagem.component';
+import { PostagemUnicaComponent } from './postagem-unica/postagem-unica.component';
 
 
 
@@ -43,7 +45,9 @@ import { AlertasComponent } from './alertas/alertas.component';
     DeleteTemaComponent,
     PutPostagemComponent,
     DeletePostagemComponent,
-    AlertasComponent
+    AlertasComponent,
+    ListaPostagemComponent,
+    PostagemUnicaComponent
   ],
   imports: [
     BrowserModule,

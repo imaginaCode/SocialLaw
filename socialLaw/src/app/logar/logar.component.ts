@@ -10,7 +10,10 @@ import { AuthService } from '../service/auth.service';
 })
 export class LogarComponent implements OnInit {
 
-  UsuarioLogin: UsuarioLogin = new UsuarioLogin()
+  usuarioLogin: UsuarioLogin = new UsuarioLogin()
+  nome:string;
+
+
 
 
   constructor(
@@ -22,13 +25,24 @@ export class LogarComponent implements OnInit {
   }
 
   entrar() {
-    this.authService.logar(this.UsuarioLogin).subscribe((resp: UsuarioLogin) => {
-      this.UsuarioLogin = resp
-      localStorage.setItem('token', this.UsuarioLogin.token)
-      this.router.navigate(['/feed'])
+    this.authService.logar(this.usuarioLogin).subscribe((resp: UsuarioLogin) => {
+      this.usuarioLogin = resp
+      this.setUsuario(this.usuarioLogin)
+      localStorage.setItem('token', this.usuarioLogin.token)
+      this.router.navigate(['/feed', { usuario: this.usuarioLogin }])
 
 
     })
+  }
+
+  setUsuario(user: UsuarioLogin)
+  {
+    this.usuarioLogin = user
+  }
+
+  getUsuario()
+  {
+    return this.usuarioLogin;
   }
 
 }

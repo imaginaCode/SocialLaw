@@ -1,7 +1,7 @@
 <div class="feed" data-aos="fade-down" data-aos-duration="1000" style="background-color: white" >
-  <div class="container shadow-lg p-3 mb-5" >
+  <div class="container shadow-lg p-3 mb-5 mt-5 " >
   <div class="row">
-      <div class="col-md-8 mt-5">
+      <div class="col-md-8 mt-8">
           <!--centro do feed-->
 
           <h3 class="text-center mb-4 postagem">
@@ -51,29 +51,6 @@
 
               <hr class="mt-5 mb-5" />
 
-              <nav class="d-flex justify-content-center">
-                <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                  <a
-                    class="nav-item nav-link active text-secondary font-weight-bold"
-                    id="nav-home-tab"
-                    data-toggle="tab"
-                    href="#minhas-postagens"
-                    role="tab"
-                    aria-controls="nav-home"
-                    aria-selected="true"
-                    >Minhas Postagens</a>
-
-                  <a
-                    class="nav-item nav-link text-secondary font-weight-bold"
-                    id="nav-profile-tab"
-                    data-toggle="tab"
-                    href="#postagens-temas"
-                    role="tab"
-                    aria-controls="nav-profile"
-                    aria-selected="false"
-                    >Postagens por tema</a>
-                </div>
-              </nav>
 
               <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active"
@@ -235,7 +212,24 @@
 
       <div class="col-md-4 justify-content-end mt-5">
           <!--lateral direita com o perfil -->
-          <app-navbar-lateral></app-navbar-lateral>
+          <div class="card justify-element-center shadow-lg p-3 mb-5 bg-transparent" style="width: 18rem;  ">
+            <img class="card-img-top rounded-circle justify-content-center"
+              style="width:250px; height: 250px; padding: 12px; margin-left:8px; margin-right:12px "
+              src="https://static.vecteezy.com/system/resources/previews/000/654/724/non_2x/vector-woman-face-cartoon.jpg"
+              alt="Imagem de capa do card">
+            <div class="card-body">
+              <h5 class="card-title">{{user.nome}}</h5>
+
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item " style=" color:white; border-color:white; background-color:#000052;">Cras justo odio
+              </li>
+              <li class="list-group-item " style=" color:white; border-color:white; background-color:#000052;">Dapibus ac
+                facilisis in</li>
+              <li class="list-group-item " style=" color:white;border-color:white; background-color:#000052;">Vestibulum at eros
+              </li>
+            </ul>
+          </div>
       </div>
 
   </div>

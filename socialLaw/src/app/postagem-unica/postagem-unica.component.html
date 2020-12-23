@@ -1,0 +1,82 @@
+<div class="feed" data-aos="fade-down" data-aos-duration="1000" style="background-color: white" >
+  <div class="container shadow-lg p-3 mb-5" >
+  <div class="row">
+      <div class="col-md-12 mt-5">
+
+
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active"
+            id="minhas-postagens"
+            role="tabpanel"
+            aria-labelledby="nav-postagens-tab"
+          >
+
+            <div class="row">
+              <div class="col-md-12">
+
+                <div class="card mt-5 mb-5"  >
+
+                  <div class="card-header">
+                      <div class="row d-flex align-items-center">
+                          <div class="col-md-8">
+                              <h5 class="card-title"> {{postagem.titulo}} </h5>
+                              <small>Tema:{{postagem.tema.nome}}</small>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="card-body" >
+                    <p class="card-text" aria-describedby="texto"> {{postagem.artigo}} </p>
+                    <small id="texto" class="form-text m-0 text-muted mb-3 text-monospace">
+                      Postado em {{postagem.data | date: 'dd/MM/yyyy'}} às {{postagem.data | date:'HH:mm'}}</small>
+
+                      <div class="form-group">
+                        <label class="text-monospace" for="titulo" >Comentário:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="comentario"
+                          placeholder="Digite aqui seu comentário"
+                          [(ngModel)]='comentario.artigo'
+                        />
+
+                          <button type="button" class="btn btn-vinho w-25 mt-2" (click)='publicarComentario()'>
+                            Publicar
+                          </button>
+                          <button type="button" class="btn btn-vinho ml-2 mt-2" data-toggle="collapse" data-target="#collapseExample"> Mostrar Comentários </button>
+                          <div *ngFor='let coment of postagem.comentarios' class="collapse" id="collapseExample">
+                            <div class="col-md-12">
+                              <div class="card mt-5">
+                                <div class="card-body">
+
+                                  <small>{{coment.artigo}} </small>
+                                  <small id="texto" class="form-text m-0 text-muted mt-2 text-monospace">
+                                    Postado em {{coment.data | date: 'dd/MM/yyyy'}} às {{coment.data | date:'HH:mm'}}</small>
+
+
+                                </div>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+
+              </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+
+
+
+      </div>
+      </div>
+    </div>
+  </div>

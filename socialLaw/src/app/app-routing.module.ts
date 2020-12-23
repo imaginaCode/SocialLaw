@@ -1,3 +1,5 @@
+import { PostagemUnicaComponent } from './postagem-unica/postagem-unica.component';
+import { ListaPostagemComponent } from './lista-postagem/lista-postagem.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
@@ -17,11 +19,13 @@ const routes: Routes = [
   {path: "feed", component: FeedComponent},
   {path: "logar", component:LogarComponent},
   {path: "cadastrar", component: CadastrarComponent},
+  {path: "lista", component: ListaPostagemComponent},
   {path:"cadastro-tema", component: PostTemaComponent},
   {path:"editar-tema/:id", component: PutTemaComponent},
   {path:"delete-tema/:id", component: DeleteTemaComponent},
   {path: 'editar-post/:id', component: PutPostagemComponent}, /* AQUI */
-  {path: 'delete-post/:id', component: DeletePostagemComponent}
+  {path: 'delete-post/:id', component: DeletePostagemComponent},
+  {path: 'post-uni/:id', component: PostagemUnicaComponent},
 
 ];
 
