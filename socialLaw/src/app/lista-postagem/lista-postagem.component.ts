@@ -22,10 +22,11 @@ constructor(private postagemService: PostagemService,
   private alert : AlertasService,
   private router: Router) {
 
-    /*const nav = this.router.getCurrentNavigation();
-    console.log(nav?.extras.state);*/
-
    }
+
+/*Aqui são as informações da paginação*/
+p : number = 1 ;
+contador : number = 2;
 
 key = 'data'
 reverse = true

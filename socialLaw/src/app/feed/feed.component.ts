@@ -31,7 +31,8 @@ export class FeedComponent implements  OnInit {
 }
 
 
-
+  p : number = 1 ;
+  contador : number = 3;
 
   key = 'data'
   reverse = true
@@ -70,6 +71,7 @@ export class FeedComponent implements  OnInit {
     this.findAllTemas()
     this.findAllComentarios()
     this.findUserUsuario(username)
+    this.findAllPostagensUsuario();
 
 
 
@@ -91,7 +93,7 @@ export class FeedComponent implements  OnInit {
 
   findAllPostagensUsuario()
   {
-    this.postagemService.getAllPostagens().subscribe((resp:PostagemModel[])=>{this.listaPostagem = resp})
+    this.postagemService.getAllPostagens().subscribe((resp:PostagemModel[])=>{this.listaPostagem = resp});
     this.listaPostagem.forEach( (post) => {
       if(post.usuario.Id_usuario === this.user.Id_usuario)
       {

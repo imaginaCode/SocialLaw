@@ -26,6 +26,7 @@ import { DeletePostagemComponent } from './delete-postagem/delete-postagem.compo
 import { AlertasComponent } from './alertas/alertas.component';
 import { ListaPostagemComponent } from './lista-postagem/lista-postagem.component';
 import { PostagemUnicaComponent } from './postagem-unica/postagem-unica.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -56,6 +57,7 @@ import { PostagemUnicaComponent } from './postagem-unica/postagem-unica.componen
     HttpClientModule,
     FormsModule,
     OrderModule,
+    NgxPaginationModule,
     ModalModule.forRoot()
 
   ],

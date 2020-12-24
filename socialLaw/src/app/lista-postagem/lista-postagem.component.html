@@ -1,8 +1,12 @@
-<div class="feed" data-aos="fade-down" data-aos-duration="1000" style="background-color: white" >
-  <div class="container shadow-lg p-3 mb-5" >
-  <div class="row">
+<div
+  class="feed"
+  data-aos="fade-down"
+  data-aos-duration="1000"
+  style="background-color: white"
+>
+  <div class="container shadow-lg p-3 mb-5">
+    <div class="row">
       <div class="col-md-12 mt-5">
-
         <nav class="d-flex justify-content-center">
           <div class="nav nav-tabs" id="nav-tab" role="tablist">
             <a
@@ -13,7 +17,8 @@
               role="tab"
               aria-controls="nav-home"
               aria-selected="true"
-              >Minhas Postagens</a>
+              >Minhas Postagens</a
+            >
 
             <a
               class="nav-item nav-link text-secondary font-weight-bold"
@@ -23,15 +28,14 @@
               role="tab"
               aria-controls="nav-profile"
               aria-selected="false"
-              >Postagens por tema</a>
+              >Postagens por tema</a
+            >
           </div>
         </nav>
 
-
-
-
         <div class="tab-content" id="nav-tabContent">
-          <div class="tab-pane fade show active"
+          <div
+            class="tab-pane fade show active"
             id="minhas-postagens"
             role="tabpanel"
             aria-labelledby="nav-postagens-tab"
@@ -43,116 +47,148 @@
                   type="search"
                   placeholder="Pesquisar postagem"
                   aria-label="Pesquisar"
-                  [(ngModel)]= 'titulo'
+                  [(ngModel)]="titulo"
                 />
               </div>
               <div class="col-md-2 pl-0">
-                <button class="btn btn-vinho w-100" type="button" (click)= 'findByTituloPostagem()'>
+                <button
+                  class="btn btn-vinho w-100"
+                  type="button"
+                  (click)="findByTituloPostagem()"
+                >
                   Pesquisar
                 </button>
               </div>
             </div>
 
-
             <div class="row">
               <div class="col-md-12">
-
-                <div class="card mt-5 mb-5"  *ngFor="let item of listaPostagem | orderBy : key : reverse" >
-
+                <div
+                  class="card mt-5 mb-5"
+                  *ngFor="
+                    let item of listaPostagem
+                      | orderBy: key:reverse
+                      | paginate: { itemsPerPage: contador, currentPage: p }
+                  "
+                >
                   <div class="card-header">
-                      <div class="row d-flex align-items-center">
-                          <div class="col-md-8">
-                              <h5 class="card-title"> {{item.titulo}} </h5>
-                              <small>Tema: {{item.tema.nome}} </small>
-
-                          </div>
-                          <div class="col-md-4 d-flex justify-content-end">
-
-                              <button class="mr-3 btn btn-vinho"
-                                [routerLink]="['/editar-post', item.id_postagem]"> <!-- O ID ESTÁ SENDO ENVIADO PELA URL: editar-post/:id(rota criada) -->
-                                  Editar
-                              </button>
-
-                              <button class="btn btn-vinho ml-3"
-                                [routerLink]="['/post-uni', item.id_postagem]">
-                                  Ver mais
-                              </button>
-                          </div>
+                    <div class="row d-flex align-items-center">
+                      <div class="col-md-8">
+                        <h5 class="card-title">{{ item.titulo }}</h5>
+                        <small>Tema: {{ item.tema.nome }} </small>
                       </div>
+                      <div class="col-md-4 d-flex justify-content-end">
+                        <button
+                          class="btn btn-vinho ml-3"
+                          [routerLink]="['/post-uni', item.id_postagem]"
+                        >
+                          Ver mais
+                        </button>
+                      </div>
+                    </div>
                   </div>
 
-                  <div class="card-body" >
-                    <p class="card-text" aria-describedby="texto"> {{item.artigo}} </p>
-                    <small id="texto" class="form-text m-0 text-muted mb-3 text-monospace">
-                      Postado em {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}</small>
-
-                      
-
-                      </div>
-
-              </div>
+                  <div class="card-body">
+                    <p class="card-text" aria-describedby="texto">
+                      {{ item.artigo }}
+                    </p>
+                    <small
+                      id="texto"
+                      class="form-text m-0 text-muted mb-3 text-monospace"
+                    >
+                      Postado em {{ item.data | date: "dd/MM/yyyy" }} às
+                      {{ item.data | date: "HH:mm" }}</small
+                    >
+                  </div>
+                </div>
               </div>
             </div>
-
           </div>
-
+          <!--Aqui é a div de paginação-->
+          <div class="text-right">
+            <pagination-controls
+              (pageChange)="p = $event"
+              previousLabel="Anterior"
+              nextLabel="Próximo"
+            ></pagination-controls>
+          </div>
         </div>
-
-
 
         <div
-        class="tab-pane fade"
-        id="postagens-temas"
-        role="tabpanel"
-        aria-labelledby="nav-presenca-tab"
-      >
-        <div class="row mt-3 mb-3">
-          <div class="col-md-10 pr-0">
-            <input
-              class="form-control w-100"
-              type="search"
-              placeholder="Pesquisar postagem"
-              aria-label="Pesquisar"
-              [(ngModel)]= 'nomeTema'>
-          </div>
-          <div class="col-md-2 pl-0">
-            <button class="btn btn-outline-danger w-100" type="button" (click)= 'findByNomeTema()'>
-              Pesquisar
-            </button>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-12">
-
-            <div class="card mt-5 mb-5"  *ngFor="let item of listaPostagem | orderBy : key : reverse">
-              <div *ngFor='let post of item.postagem'>
-              <div class="card-header">
-                  <div class="row d-flex align-items-center">
-                      <div class="col-md-8">
-                          <h5 class="card-title"> {{post.titulo}} </h5>
-                          <small>Tema: {{post.tema.nome}} </small>
-                      </div>
-                  </div>
-              </div>
-
-              <div class="card-body" >
-                <p class="card-text" aria-describedby="texto"> {{post.artigo}} </p>
-                <small id="texto" class="form-text m-0 text-muted mb-3 text-monospace">
-                  Postado em {{post.data | date: 'dd/MM/yyyy'}} às {{post.data | date:'HH:mm'}}</small>
-              </div>
-          </div>
+          class="tab-pane fade"
+          id="postagens-temas"
+          role="tabpanel"
+          aria-labelledby="nav-presenca-tab"
+        >
+          <div class="row mt-3 mb-3">
+            <div class="col-md-10 pr-0">
+              <input
+                class="form-control w-100"
+                type="search"
+                placeholder="Pesquisar postagem"
+                aria-label="Pesquisar"
+                [(ngModel)]="nomeTema"
+              />
+            </div>
+            <div class="col-md-2 pl-0">
+              <button
+                class="btn btn-outline-danger w-100"
+                type="button"
+                (click)="findByNomeTema()"
+              >
+                Pesquisar
+              </button>
             </div>
           </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div
+                class="card mt-5 mb-5"
+                *ngFor="
+                  let item of listaPostagem
+                    | orderBy: key:reverse
+                    | paginate: { itemsPerPage: contador, currentPage: p }
+                "
+              >
+                <div *ngFor="let post of item.postagem">
+                  <div class="card-header">
+                    <div class="row d-flex align-items-center">
+                      <div class="col-md-8">
+                        <h5 class="card-title">{{ post.titulo }}</h5>
+                        <small>Tema: {{ post.tema.nome }} </small>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card-body">
+                    <p class="card-text" aria-describedby="texto">
+                      {{ post.artigo }}
+                    </p>
+                    <small
+                      id="texto"
+                      class="form-text m-0 text-muted mb-3 text-monospace"
+                    >
+                      Postado em {{ post.data | date: "dd/MM/yyyy" }} às
+                      {{ post.data | date: "HH:mm" }}</small
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--Aqui é a div de paginação-->
+          <div class="text-right">
+            <pagination-controls
+              (pageChange)="p = $event"
+              previousLabel="Anterior"
+              nextLabel="Próximo"
+            ></pagination-controls>
+          </div>
         </div>
 
-
-      </div>
-
-
-
-
-      <!--Aqui fecha as divs básicas que iniciam a sessão-->
+        <!--Aqui fecha as divs básicas que iniciam a sessão-->
       </div>
     </div>
   </div>
