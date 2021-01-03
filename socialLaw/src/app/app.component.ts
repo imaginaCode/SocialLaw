@@ -11,9 +11,10 @@ export class AppComponent {
   title = 'SocialLaw';
 
   ngOnInit() {
-    
+
     AOS.init();
-     
     
+
+
   }
 }
