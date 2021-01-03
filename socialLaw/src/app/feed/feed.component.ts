@@ -71,7 +71,7 @@ export class FeedComponent implements  OnInit {
     this.findAllTemas()
     this.findAllComentarios()
     this.findUserUsuario(username)
-    this.findAllPostagensUsuario();
+    
 
 
 
@@ -91,16 +91,6 @@ export class FeedComponent implements  OnInit {
       this.postagemService.getAllPostagens().subscribe((resp:PostagemModel[])=>{this.listaPostagem = resp})
   }
 
-  findAllPostagensUsuario()
-  {
-    this.postagemService.getAllPostagens().subscribe((resp:PostagemModel[])=>{this.listaPostagem = resp});
-    this.listaPostagem.forEach( (post) => {
-      if(post.usuario.Id_usuario === this.user.Id_usuario)
-      {
-        this.listaPostagemUsuario.push(post)
-      }
-  });
-  }
 
   publicar()
   {

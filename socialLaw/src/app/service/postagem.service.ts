@@ -1,3 +1,4 @@
+import { UsuarioModel } from './../model/UsuarioModel';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -14,6 +15,8 @@ export class PostagemService {
     return this.http.get<PostagemModel[]>('http://localhost:8080/postagem', this.token)
   }
 
+
+
   getByIdPostagem(id: number): Observable<PostagemModel>{
     return this.http.get<PostagemModel>(`http://localhost:8080/postagem/${id}`, this.token);
   }
@@ -21,6 +24,8 @@ export class PostagemService {
   postPostagem(postagem: PostagemModel): Observable<PostagemModel> {
     return this.http.post<PostagemModel>('http://localhost:8080/postagem', postagem, this.token)
   }
+
+
 
   putPostagem(postagem: PostagemModel): Observable<PostagemModel>{
     return this.http.put<PostagemModel>('http://localhost:8080/postagem', postagem, this.token);
@@ -35,4 +40,18 @@ export class PostagemService {
     return this.http.get<PostagemModel[]>(`http://localhost:8080/postagem/titulo/${titulo}`,this.token );
   }
 
+
+  /*getAllPostUser(usuario: UsuarioModel): Observable<PostagemModel[]>
+  {
+    return this.http.get<PostagemModel[]>('http://localhost:8080/postagem/usuario', usuario, this.token);
+  }*/
+
+  getAllPostUser(id : number):Observable<PostagemModel[]>
+  {
+    return this.http.get<PostagemModel[]>(`http://localhost:8080/postagem/usuario/${id}`, this.token);
+  }
+
+
+
 }
+
