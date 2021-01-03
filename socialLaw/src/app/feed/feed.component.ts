@@ -13,6 +13,7 @@ import { TemaService } from '../service/tema.service';
 import { AuthService } from '../service/auth.service';
 import {  ActivatedRoute, ParamMap } from '@angular/router';
 import { UsuarioModel } from '../model/UsuarioModel';
+import { useAnimation } from '@angular/animations';
 
 @Component({
   selector: 'app-feed',
@@ -71,10 +72,19 @@ export class FeedComponent implements  OnInit {
     this.findAllTemas()
     this.findAllComentarios()
     this.findUserUsuario(username)
-    
 
 
 
+
+  }
+
+  verificarNulo():boolean
+  {
+    if(this.user.postagem.length != null)
+    {
+      return true
+    }
+    return false
   }
 
 

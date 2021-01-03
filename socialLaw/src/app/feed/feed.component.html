@@ -79,6 +79,7 @@
                   <div class="row">
                     <div class="col-md-12">
 
+                      <ng-template [ngIf]="verificarNulo()">
                       <div class="card mt-5 mb-5"  *ngFor="let item of user.postagem | orderBy : key : reverse | paginate: { itemsPerPage: contador, currentPage: p }" >
 
                         <div class="card-header">
@@ -140,6 +141,8 @@
                             </div>
 
                     </div>
+
+                  </ng-template>
                     </div>
                     <div class="text-right">
                       <pagination-controls
@@ -231,15 +234,14 @@
               src="https://static.vecteezy.com/system/resources/previews/000/654/724/non_2x/vector-woman-face-cartoon.jpg"
               alt="Imagem de capa do card">
             <div class="card-body">
-              <h5 class="card-title">{{user.nome}}</h5>
+              <h5 class="card-title">Seja bem-vindxs {{user.nome}}!</h5>
 
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item " style=" color:white; border-color:white; background-color:#000052;">Cras justo odio
+              <li class="list-group-item " style=" color:white; border-color:white; background-color:#000052;">{{user.usuario}}
               </li>
-              <li class="list-group-item " style=" color:white; border-color:white; background-color:#000052;">Dapibus ac
-                facilisis in</li>
-              <li class="list-group-item " style=" color:white;border-color:white; background-color:#000052;">Vestibulum at eros
+              <li class="list-group-item " style=" color:white; border-color:white; background-color:#000052;">{{user.postagem.length}} Postagens</li>
+              <li class="list-group-item " style=" color:white;border-color:white; background-color:#000052;">{{user.comentarios.length}} Comentários
               </li>
             </ul>
           </div>
