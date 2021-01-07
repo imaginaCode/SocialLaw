@@ -14,6 +14,13 @@
   margin-left: 1000px;
 }
 
+.mx-h
+{
+
+    max-height: 100px;
+
+}
+
 .btn-sair {
   color: #ffffff;
   background-color: #000052;
@@ -70,4 +77,15 @@
 .medi-sharp {
   font-size: 1.5em;
   text-shadow: -3px -3px #a30000;
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.ml-sair-avatar {
+  margin-left: 930px;
 }

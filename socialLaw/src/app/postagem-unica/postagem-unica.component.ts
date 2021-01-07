@@ -113,6 +113,20 @@ export class PostagemUnicaComponent implements OnInit {
     return false
   }
 
+  fotoUser():boolean
+  {
+    return this.user.foto !=null
+  }
+
+  fotoUserPostagem():boolean
+  {
+    return this.postagem.usuario.foto !=null
+  }
+
+  fotoUserComentario(coment : ComentarioModel):boolean
+  {
+    return coment.usuario.foto !=null
+  }
 
 
 

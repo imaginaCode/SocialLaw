@@ -157,7 +157,15 @@
                     <div class="row d-flex align-items-center">
                       <div class="col-md-8">
                         <h5 class="card-title">{{ post.titulo }}</h5>
-                        <small>Tema: {{ post.tema.nome }} </small>
+                        <small>Tema: {{ item.nome }} </small>
+                      </div>
+                      <div class="col-md-4 d-flex justify-content-end">
+                        <button
+                          class="btn btn-vinho ml-3"
+                          [routerLink]="['/post-uni', post.id_postagem]"
+                        >
+                          Ver mais
+                        </button>
                       </div>
                     </div>
                   </div>

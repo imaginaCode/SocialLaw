@@ -1,4 +1,4 @@
-<nav class="roboto navbar fixed-top navbar-expand-lg navbar-dark" style="background-color:  #000052;">
+<nav class="roboto navbar fixed-top navbar-expand-lg navbar-dark mx-h align-middle" style="background-color:  #000052;">
 
   <!--Icone-->
   <a class="navbar-brand" href="#">
@@ -21,31 +21,34 @@
     <ul class="navbar-nav mr-auto">
 
       <li class="nav-item active">
-        <a class="nav-link p-3 ml-4 " routerLink = '/feed'>Feed <span class="sr-only">(página atual)</span></a>
+        <a class="nav-link p-3 ml-4 mt-3" routerLink = '/feed'>Feed <span class="sr-only">(página atual)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link p-3 ml-4 " routerLink = '/lista'>Fórum <span class="sr-only"></span></a>
+        <a class="nav-link p-3 ml-4 mt-3 " routerLink = '/lista'>Fórum <span class="sr-only"></span></a>
       </li>
 
         <!--Botões-->
 
 
-        <div class="p-2">
+        <div class="p-2 justify-content-center ">
 
-          <form class="form-inline my-2 my-lg-0">
+          <form class="form-inline my-2 my-lg-0 ">
 
 
             <div *ngIf='auth.btnLogin()'>
-              <img class="ml-850" src="assets/login.png" width="30" height="30" alt="">
+              <img class="ml-850 " src="assets/login.png" width="30" height="30" alt="">
               <button class="btn btn-menu ml-2" routerLink='/logar'>Login</button>
             </div>
 
             <div *ngIf='auth.btnLogin()'>
-              <button class="btn btn-menu ml-4 justify-content-end " routerLink='/cadastrar'>Cadastrar</button>
+              <button class="btn btn-menu ml-2" routerLink='/cadastrar'>Cadastrar</button>
             </div>
 
             <div *ngIf='auth.btnSair()'>
-              <button class="btn btn-sair ml-sair"  (click)= 'sair()'>Sair</button>
+              <div *ngIf="fotoUser(); then fotoUsuario else fotoOutra"></div>
+                <ng-template #fotoUsuario><img [src]="usuario.foto" alt="usuário" class="avatar ml-sair-avatar mt-4"></ng-template>
+                <ng-template #fotoOutra><img src="assets/user.png" alt="usuário" class="avatar ml-sair-avatar mt-4"></ng-template>
+              <button class="btn btn-sair ml-sair mb-2"  (click)= 'sair()'>Sair</button>
             </div>
 
 

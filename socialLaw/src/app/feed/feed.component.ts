@@ -190,4 +190,9 @@ export class FeedComponent implements  OnInit {
 
   }
 
+  fotoUser():boolean
+  {
+    return this.user.foto !=null
+  }
+
 }

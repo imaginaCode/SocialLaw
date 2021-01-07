@@ -20,7 +20,10 @@
                       <div class="row d-flex align-items-center">
                           <div class="col-md-8">
                               <h5 class="card-title "> {{postagem.titulo}} </h5>
-                              <h6>Autor:{{postagem.usuario.nome}}</h6>
+                              <div *ngIf="fotoUserPostagem(); then fotoUsuario else fotoOutra"></div>
+                              <ng-template #fotoUsuario><img [src]="postagem.usuario.foto" alt="usuário" class="avatar" style="margin-bottom: 50px;"></ng-template>
+                              <ng-template #fotoOutra><img src="assets/user.png" alt="usuário" class="avatar ml-sair-avatar mt-4"></ng-template>
+                              <h6 style="margin-top: 20px;">{{postagem.usuario.nome}}</h6>
                               <small>Tema:{{postagem.tema.nome}}  </small>
 
                           </div>
@@ -50,7 +53,10 @@
                             <div class="col-md-12">
                               <div class="card mt-5">
                                 <div class="card-body">
-                                  <p class="card-text" aria-describedby="texto">Usuário: {{coment.usuario.nome}} </p>
+                                  <div *ngIf="fotoUserComentario(coment); then fotoUsuario else fotoOutra"></div>
+                                  <ng-template #fotoUsuario><img [src]="coment.usuario.foto" alt="usuário" class="avatar"></ng-template>
+                                  <ng-template #fotoOutra><img src="assets/user.png" alt="usuário" class="avatar ml-sair-avatar mt-4"></ng-template>
+                                  <p class="card-text" aria-describedby="texto">{{coment.usuario.nome}} </p>
                                   <small>{{coment.artigo}} </small>
                                   <small id="texto" class="form-text m-0 text-muted mt-2 text-monospace">
                                     Postado em {{coment.data | date: 'dd/MM/yyyy'}} às {{coment.data | date:'HH:mm'}}</small>
