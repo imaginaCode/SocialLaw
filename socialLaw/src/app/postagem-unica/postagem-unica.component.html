@@ -54,6 +54,14 @@
                                   <small>{{coment.artigo}} </small>
                                   <small id="texto" class="form-text m-0 text-muted mt-2 text-monospace">
                                     Postado em {{coment.data | date: 'dd/MM/yyyy'}} às {{coment.data | date:'HH:mm'}}</small>
+                                    <ng-template [ngIf]="verificarUser(coment)">
+                                    <div class="col-md-12 d-flex justify-content-end">
+                                      <button class="btn btn-vinho ml-3" style=" margin-left: 1000px;"
+                                      (click)='deleteComent(coment.id_comentario)'>
+                                          Apagar
+                                      </button>
+                                  </div>
+                                </ng-template>
 
 
                                 </div>

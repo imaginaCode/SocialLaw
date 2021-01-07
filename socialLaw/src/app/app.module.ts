@@ -27,6 +27,7 @@ import { AlertasComponent } from './alertas/alertas.component';
 import { ListaPostagemComponent } from './lista-postagem/lista-postagem.component';
 import { PostagemUnicaComponent } from './postagem-unica/postagem-unica.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { DeleteComentComponent } from './delete-coment/delete-coment.component';
 
 
 
@@ -48,7 +49,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     DeletePostagemComponent,
     AlertasComponent,
     ListaPostagemComponent,
-    PostagemUnicaComponent
+    PostagemUnicaComponent,
+    DeleteComentComponent
   ],
   imports: [
     BrowserModule,

@@ -80,7 +80,7 @@ export class FeedComponent implements  OnInit {
 
   verificarNulo():boolean
   {
-    if(this.user.postagem.length != null)
+    if(this.user.postagem != null)
     {
       return true
     }
@@ -182,6 +182,12 @@ export class FeedComponent implements  OnInit {
         this.findAllComentarios();
       });
     }
+  }
+
+  verificarAdmin():boolean
+  {
+    return this.user.usuario == 'admin@admin.com';
+
   }
 
 }

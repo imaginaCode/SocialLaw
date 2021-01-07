@@ -93,6 +93,26 @@ export class PostagemUnicaComponent implements OnInit {
     }
   }
 
+  deleteComent(id:number)
+  {
+    let idComent = Number(id)
+    let pathId = this.idPostagem
+    console.log('entrou!'+ idComent)
+    this.comentarioService.deleteComentario(idComent).subscribe(()=>{
+      this.alert.showAlertDanger("Comentario apagado!");
+    });
+
+  }
+
+  verificarUser(coment: ComentarioModel):boolean
+  {
+    if(coment.usuario.usuario === this.user.usuario)
+    {
+      return true
+    }
+    return false
+  }
+
 
 
 
