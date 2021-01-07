@@ -1,12 +1,12 @@
 .btn-azul{
-    color: #14148b;
+    color: #000052;
     background-color: #ffffff;
-    border-color: #14148b;
+    border-color: #000052;
 }
 
 .btn-azul:hover{
     color: #ffffff;
-    background-color:  #14148b;
+    background-color:  #000052;
 }
 
 .p-6 {

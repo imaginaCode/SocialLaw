@@ -1,7 +1,7 @@
 <div class="feed" data-aos="fade-down" data-aos-duration="1000" style="background-color: white" >
   <div class="container shadow-lg p-3 mb-5" >
   <div class="row">
-      <div class="col-md-12 mt-5">
+      <div class="col-md-12 mt-2 mb-2">
 
 
         <div class="tab-content" id="nav-tabContent">
@@ -19,8 +19,10 @@
                   <div class="card-header">
                       <div class="row d-flex align-items-center">
                           <div class="col-md-8">
-                              <h5 class="card-title"> {{postagem.titulo}} </h5>
-                              <small>Tema:{{postagem.tema.nome}}</small>
+                              <h5 class="card-title "> {{postagem.titulo}} </h5>
+                              <h6>Autor:{{postagem.usuario.nome}}</h6>
+                              <small>Tema:{{postagem.tema.nome}}  </small>
+
                           </div>
                       </div>
                   </div>
@@ -48,7 +50,7 @@
                             <div class="col-md-12">
                               <div class="card mt-5">
                                 <div class="card-body">
-
+                                  <p class="card-text" aria-describedby="texto">Usuário: {{coment.usuario.nome}} </p>
                                   <small>{{coment.artigo}} </small>
                                   <small id="texto" class="form-text m-0 text-muted mt-2 text-monospace">
                                     Postado em {{coment.data | date: 'dd/MM/yyyy'}} às {{coment.data | date:'HH:mm'}}</small>

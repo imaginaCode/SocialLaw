@@ -1,0 +1,11 @@
+.btn-vinho {
+  color: #fff;
+  background-color: #000052;
+  border-color: #a30000;
+}
+
+.btn-vinho:hover {
+  color: #fff;
+  background-color: #a30000;
+  border-color: #a30000;
+}
