@@ -26,7 +26,7 @@ constructor(private postagemService: PostagemService,
 
 /*Aqui são as informações da paginação*/
 p : number = 1 ;
-contador : number = 2;
+contador : number = 3;
 
 key = 'data'
 reverse = true
@@ -87,7 +87,7 @@ this.postagemService.getByTituloPostagem(this.titulo).subscribe((resp:PostagemMo
 
 findByNomeTema()
 {
-if(this.titulo === '')
+if(this.nomeTema === '')
 {
 this.findAllTemas();
 } else

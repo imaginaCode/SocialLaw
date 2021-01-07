@@ -103,7 +103,7 @@
                 </div>
               </div>
             </div>
-          </div>
+
           <!--Aqui é a div de paginação-->
           <div class="text-right">
             <pagination-controls
@@ -113,6 +113,7 @@
             ></pagination-controls>
           </div>
         </div>
+
 
         <div
           class="tab-pane fade"
@@ -125,19 +126,19 @@
               <input
                 class="form-control w-100"
                 type="search"
-                placeholder="Pesquisar postagem"
+                placeholder="Pesquisar por Tema"
                 aria-label="Pesquisar"
                 [(ngModel)]="nomeTema"
               />
             </div>
             <div class="col-md-2 pl-0">
               <button
-                class="btn btn-outline-danger w-100"
-                type="button"
-                (click)="findByNomeTema()"
-              >
-                Pesquisar
-              </button>
+                  class="btn btn-vinho w-100"
+                  type="button"
+                  (click)="findByNomeTema()"
+                >
+                  Pesquisar
+                </button>
             </div>
           </div>
 
@@ -146,7 +147,7 @@
               <div
                 class="card mt-5 mb-5"
                 *ngFor="
-                  let item of listaPostagem
+                  let item of listaTemas
                     | orderBy: key:reverse
                     | paginate: { itemsPerPage: contador, currentPage: p }
                 "
@@ -176,7 +177,7 @@
                 </div>
               </div>
             </div>
-          </div>
+
 
           <!--Aqui é a div de paginação-->
           <div class="text-right">
@@ -192,4 +193,6 @@
       </div>
     </div>
   </div>
+</div>
+</div>
 </div>
