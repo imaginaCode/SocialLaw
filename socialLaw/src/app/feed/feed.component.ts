@@ -14,6 +14,7 @@ import { AuthService } from '../service/auth.service';
 import {  ActivatedRoute, ParamMap } from '@angular/router';
 import { UsuarioModel } from '../model/UsuarioModel';
 import { useAnimation } from '@angular/animations';
+import { SocialAuthService, SocialUser } from 'angularx-social-login';
 
 @Component({
   selector: 'app-feed',
@@ -27,7 +28,8 @@ export class FeedComponent implements  OnInit {
               private authService: AuthService,
               private comentarioService: ComentarioService,
               private alert : AlertasService,
-              private router: Router) {
+              private router: Router,
+              private authSocialService: SocialAuthService) {
 
 }
 
@@ -49,6 +51,8 @@ export class FeedComponent implements  OnInit {
   nomeTema:string;
 
   user: UsuarioModel = new UsuarioModel();
+  userSocial: SocialUser;
+  loggedIn: boolean;
 
 
 
@@ -74,9 +78,24 @@ export class FeedComponent implements  OnInit {
     this.findUserUsuario(username)
 
 
+    this.authSocialService.authState.subscribe((socialUser) => {
+      this.userSocial = socialUser;
+      this.loggedIn = (socialUser != null);
+    });
+
 
 
   }
+
+
+  verificarSocialLogin(): boolean
+    {
+      if(this.userSocial != null)
+      {
+        return true
+      }
+      return false
+    }
 
   verificarNulo():boolean
   {
@@ -92,7 +111,11 @@ export class FeedComponent implements  OnInit {
   {
     this.authService.getUserByUsuario(user).subscribe((resp:UsuarioModel)=> {
       this.user = resp
+      console.log(this.user.nome)
     })
+
+
+
 
   }
 
@@ -188,6 +211,11 @@ export class FeedComponent implements  OnInit {
   {
     return this.user.usuario == 'admin@admin.com';
 
+  }
+
+  verificarPostagem():boolean
+  {
+    return !(this.user.postagem != null)
   }
 
   fotoUser():boolean

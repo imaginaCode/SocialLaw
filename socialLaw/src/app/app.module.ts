@@ -4,7 +4,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import {ModalModule} from 'ngx-bootstrap/modal';
 import { CoolSocialLoginButtonsModule } from '@angular-cool/social-login-buttons';
-
+import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import {
+  GoogleLoginProvider,
+  FacebookLoginProvider
+} from 'angularx-social-login';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -29,6 +33,7 @@ import { ListaPostagemComponent } from './lista-postagem/lista-postagem.componen
 import { PostagemUnicaComponent } from './postagem-unica/postagem-unica.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { DeleteComentComponent } from './delete-coment/delete-coment.component';
+
 
 
 
@@ -62,11 +67,31 @@ import { DeleteComentComponent } from './delete-coment/delete-coment.component';
     OrderModule,
     NgxPaginationModule,
     ModalModule.forRoot(),
-    CoolSocialLoginButtonsModule
+    CoolSocialLoginButtonsModule,
+    SocialLoginModule
 
 
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '59346856415-nqfrk6il9odlu1u7j4efu7kap5ikll55.apps.googleusercontent.com'
+            )
+          },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('881084955975877')
+          }
+        ]
+      } as SocialAuthServiceConfig,
+    }
+   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

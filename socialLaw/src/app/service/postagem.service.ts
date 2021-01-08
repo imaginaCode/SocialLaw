@@ -40,12 +40,6 @@ export class PostagemService {
     return this.http.get<PostagemModel[]>(`http://localhost:8080/postagem/titulo/${titulo}`,this.token );
   }
 
-
-  /*getAllPostUser(usuario: UsuarioModel): Observable<PostagemModel[]>
-  {
-    return this.http.get<PostagemModel[]>('http://localhost:8080/postagem/usuario', usuario, this.token);
-  }*/
-
   getAllPostUser(id : number):Observable<PostagemModel[]>
   {
     return this.http.get<PostagemModel[]>(`http://localhost:8080/postagem/usuario/${id}`, this.token);

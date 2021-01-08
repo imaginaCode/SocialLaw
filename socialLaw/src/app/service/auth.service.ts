@@ -8,7 +8,7 @@ import { UsuarioModel } from '../model/UsuarioModel';
   providedIn: 'root'
 })
 export class AuthService {
-  
+
   constructor( private http: HttpClient) {
   }
 

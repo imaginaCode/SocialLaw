@@ -21,8 +21,8 @@
                           <div class="col-md-8">
                               <h5 class="card-title "> {{postagem.titulo}} </h5>
                               <div *ngIf="fotoUserPostagem(); then fotoUsuario else fotoOutra"></div>
-                              <ng-template #fotoUsuario><img [src]="postagem.usuario.foto" alt="usuário" class="avatar" style="margin-bottom: 50px;"></ng-template>
-                              <ng-template #fotoOutra><img src="assets/user.png" alt="usuário" class="avatar ml-sair-avatar mt-4"></ng-template>
+                              <ng-template #fotoUsuario><img [src]="postagem.usuario.foto" alt="usuário" class="avatar" style="margin-bottom: 10px;"></ng-template>
+                              <ng-template #fotoOutra><img src="assets/user.png" alt="usuário" class="avatar ml-sair-avatar mt-4" style="margin-bottom: 10px;" ></ng-template>
                               <h6 style="margin-top: 20px;">{{postagem.usuario.nome}}</h6>
                               <small>Tema:{{postagem.tema.nome}}  </small>
 

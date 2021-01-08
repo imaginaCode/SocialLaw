@@ -16,6 +16,7 @@ export class CadastrarComponent implements OnInit {
   senha!: string
   imagem! : File
   imagemUser!: string;
+  
 
   constructor(
     private authService: AuthService,
@@ -39,7 +40,13 @@ export class CadastrarComponent implements OnInit {
     this.senha = event.target.value
   }
 
+
+
+
   cadastrar() {
+
+
+
     if ( this.senha === this.usuarioModel.senha && this.imagem != null ) {
 
       this.media.uploadPhoto(this.imagem).subscribe((resp: any)=>{
@@ -55,7 +62,15 @@ export class CadastrarComponent implements OnInit {
 
       })
 
-    } else {
+    } else if(!(this.imagem != null) && this.senha === this.usuarioModel.senha)
+    {
+      this.usuarioModel.foto = 'https://telessaude.se.gov.br/wp-content/uploads/2019/04/perfil-blog.png';
+      this.authService.cadastrar(this.usuarioModel).subscribe((resp: UsuarioModel) => {
+        this.usuarioModel = resp
+        this.router.navigate(['/logar'])
+        this.alert.showAlertSuccess('Usuário cadastrado com sucesso!')
+         })
+    } else{
       this.alert.showAlertDanger('Suas senhas não conferem')
     }
   }

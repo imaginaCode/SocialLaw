@@ -1,5 +1,7 @@
+import { SocialAuthService } from 'angularx-social-login';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LogarComponent } from '../logar/logar.component';
 import { UsuarioModel } from '../model/UsuarioModel';
 import { AuthService } from './../service/auth.service';
 
@@ -12,7 +14,9 @@ export class NavbarSuperiorComponent implements OnInit {
 
   constructor(
     private router: Router,
-    public auth: AuthService
+    public auth: AuthService,
+    private authSocialService : SocialAuthService
+
   ) { }
 
   usuario: UsuarioModel = new UsuarioModel();
@@ -25,6 +29,12 @@ export class NavbarSuperiorComponent implements OnInit {
   sair() {
     this.router.navigate(['/logar'])
     localStorage.clear()
+    this.signOut()
+
+  }
+
+  signOut(): void {
+    this.authSocialService.signOut();
   }
 
   findUserUsuario(user: string)
