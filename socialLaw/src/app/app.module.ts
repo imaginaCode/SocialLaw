@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import {ModalModule} from 'ngx-bootstrap/modal';
+import { CoolSocialLoginButtonsModule } from '@angular-cool/social-login-buttons';
 
 
 
@@ -60,7 +61,9 @@ import { DeleteComentComponent } from './delete-coment/delete-coment.component';
     FormsModule,
     OrderModule,
     NgxPaginationModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    CoolSocialLoginButtonsModule
+
 
   ],
   providers: [],
