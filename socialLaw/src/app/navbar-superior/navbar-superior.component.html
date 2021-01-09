@@ -21,10 +21,10 @@
     <ul class="navbar-nav mr-auto">
 
       <li class="nav-item active">
-        <a class="nav-link p-3 ml-4 mt-3" routerLink = '/feed'>Feed <span class="sr-only">(página atual)</span></a>
+        <a class="nav-link ml-4 mt-icone" routerLink = '/feed'>Feed <span class="sr-only">(página atual)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link p-3 ml-4 mt-3 " routerLink = '/lista'>Fórum <span class="sr-only"></span></a>
+        <a class="nav-link ml-4 mt-icone " routerLink = '/lista'>Fórum <span class="sr-only"></span></a>
       </li>
 
         <!--Botões-->
@@ -46,8 +46,8 @@
 
             <div *ngIf='auth.btnSair()'>
               <div *ngIf="fotoUser(); then fotoUsuario else fotoOutra"></div>
-                <ng-template #fotoUsuario><img [src]="usuario.foto" alt="usuário" class="avatar ml-sair-avatar mt-4"></ng-template>
-                <ng-template #fotoOutra><img src="assets/user.png" alt="usuário" class="avatar ml-sair-avatar mt-4"></ng-template>
+                <ng-template #fotoUsuario><img [src]="usuario.foto" alt="usuário" class="avatar ml-sair-avatar "></ng-template>
+                <ng-template #fotoOutra><img src="assets/user.png" alt="usuário" class="avatar ml-sair-avatar "></ng-template>
               <button class="btn btn-sair ml-sair mb-2"  (click)= 'sair()'>Sair</button>
             </div>
 
