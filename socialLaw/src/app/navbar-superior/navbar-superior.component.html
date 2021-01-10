@@ -21,27 +21,29 @@
     <ul class="navbar-nav mr-auto">
 
       <li class="nav-item active">
-        <a class="nav-link ml-4 mt-icone" routerLink = '/feed'>Feed <span class="sr-only">(página atual)</span></a>
+        <a class="nav-link feed" routerLink = '/feed'>Feed <span class="sr-only">(página atual)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link ml-4 mt-icone " routerLink = '/lista'>Fórum <span class="sr-only"></span></a>
+        <a class="nav-link forum" routerLink = '/lista'>Fórum <span class="sr-only"></span></a>
       </li>
 
         <!--Botões-->
 
 
-        <div class="p-2 justify-content-center ">
+        <div class="justify-content-center ">
 
           <form class="form-inline my-2 my-lg-0 ">
 
 
             <div *ngIf='auth.btnLogin()'>
-              <img class="ml-850 " src="assets/login.png" width="30" height="30" alt="">
-              <button class="btn btn-menu ml-2" routerLink='/logar'>Login</button>
+              <div>
+                <img class="icone-login " src="assets/login.png" width="30" height="30" alt="">
+              </div>
+              <button class="btn btn-menu ml-botoes login" routerLink='/logar'>Login</button>
             </div>
 
             <div *ngIf='auth.btnLogin()'>
-              <button class="btn btn-menu ml-2" routerLink='/cadastrar'>Cadastrar</button>
+              <button class="btn btn-menu ml-botoes cadastrar" routerLink='/cadastrar'>Cadastrar</button>
             </div>
 
             <div *ngIf='auth.btnSair()'>

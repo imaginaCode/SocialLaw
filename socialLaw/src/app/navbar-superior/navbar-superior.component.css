@@ -15,8 +15,22 @@
   margin-top: 15px
 }
 
-.mt-icone {
-  margin-top: 20px;
+.icone-login {
+  margin-left: 860%;
+  margin-top: 30%;
+
+}
+
+.ml-botoes {
+  margin-left: 650%;
+}
+
+.feed {
+  margin-top: 40%;
+}
+
+.forum {
+  margin-top: 31%;
 }
 
 .mx-h
@@ -24,6 +38,15 @@
 
     max-height: 100px;
 
+}
+
+.cadastrar {
+  margin-top: -1%;
+}
+
+.login {
+  margin-top: -80%;
+  margin-left: 930%;
 }
 
 .btn-sair {
@@ -53,6 +76,7 @@
   -ms-transition: all 1s ease; /* IE 9 */
   -o-transition: all 1s ease; /* Opera */
   transition: all 1s ease;
+  
 }
 
 .btn-menu:hover {
